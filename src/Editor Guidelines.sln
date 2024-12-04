@@ -31,8 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{A5C7FD
 		..\marketplace\images\FontsAndColors.png = ..\marketplace\images\FontsAndColors.png
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColumnGuideTests", "..\test\ColumnGuideTests\ColumnGuideTests.csproj", "{38832BD0-0B36-410A-914D-2E5BA06EBA6A}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ColumnGuide", "ColumnGuide\ColumnGuide.shproj", "{61D4B2D7-4433-4C71-BE24-57A36758ED99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSIX_Dev17", "VSIX_Dev17\VSIX_Dev17.csproj", "{FEB7F80E-E565-4119-A18E-D2B9F5E95383}"
@@ -43,10 +41,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{38832BD0-0B36-410A-914D-2E5BA06EBA6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38832BD0-0B36-410A-914D-2E5BA06EBA6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38832BD0-0B36-410A-914D-2E5BA06EBA6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38832BD0-0B36-410A-914D-2E5BA06EBA6A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEB7F80E-E565-4119-A18E-D2B9F5E95383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FEB7F80E-E565-4119-A18E-D2B9F5E95383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB7F80E-E565-4119-A18E-D2B9F5E95383}.Release|Any CPU.ActiveCfg = Release|Any CPU

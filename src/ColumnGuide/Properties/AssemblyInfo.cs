@@ -19,5 +19,3 @@ using System.Runtime.InteropServices;
 // Include CodingConventions prior to VS 2022
 [assembly: ProvideCodeBase(CodeBase = "Microsoft.VisualStudio.CodingConventions.dll")]
 #endif
-
-[assembly: InternalsVisibleTo("ColumnGuideTests")]
