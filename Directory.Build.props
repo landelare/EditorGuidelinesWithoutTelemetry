@@ -2,9 +2,9 @@
 <Project>
 
   <PropertyGroup>
-    <Version>2.2.11</Version>
     <Company>Laura Andelare</Company>
     <Copyright>Copyright © 2024 Paul Harrington, Laura Andelare</Copyright>
+    <Version>2.2.12</Version>
     <LangVersion>7.3</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnlistmentRoot>$(MSBuildThisFileDirectory)</EnlistmentRoot>
