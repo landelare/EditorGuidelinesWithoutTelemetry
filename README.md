@@ -1,36 +1,13 @@
 # Editor Guidelines 🌺
-A Visual Studio extension that adds vertical column guides to the text editor.
-
-[![Build Status](https://github.com/pharring/EditorGuidelines/actions/workflows/CI.yml/badge.svg)](https://github.com/pharring/EditorGuidelines/actions/workflows/CI.yml)
+A Visual Studio extension that adds vertical column guides to the text editor, without telemetry.
 
 The extension adds vertical column guides behind your code. This is useful if you are trying to tabulate columns of data or if you want to ensure that your lines don't extend beyond a certain length. You specify where the guides go and what color they should be.
 
-#### Visual Studio 2022
-[![Visual Studio Marketplace](https://vsmarketplacebadges.dev/version-short/PaulHarrington.EditorGuidelinesPreview.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelinesPreview)
-[![Visual Studio Marketplace Rating](https://vsmarketplacebadges.dev/rating-star/PaulHarrington.EditorGuidelinesPreview.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelinesPreview)
-[![Visual Studio Marketplace Downloads](https://vsmarketplacebadges.dev/downloads-short/PaulHarrington.EditorGuidelinesPreview.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelinesPreview)
-
-#### Visual Studio 2015, 2017, 2019
-[![Visual Studio Marketplace](https://vsmarketplacebadges.dev/version-short/PaulHarrington.EditorGuidelines.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)
-[![Visual Studio Marketplace Rating](https://vsmarketplacebadges.dev/rating-star/PaulHarrington.EditorGuidelines.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)
-[![Visual Studio Marketplace Downloads](https://vsmarketplacebadges.dev/downloads-short/PaulHarrington.EditorGuidelines.svg)](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)
-
 ## Getting Started
 
-You can either download the extension (VSIX) from the Visual Studio Marketplace and manually install it, or intall it from within Visual Studio itself.
-
-### Download from the Visual Studio Marketplace
-There are two versions in the Visual Studio Marketplace
-- [Download for Visual Studio 2022](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelinesPreview)
-- [Download for Visual Studio 2015, 2017, 2019](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)
+You can download the extension (VSIX) from the Releases page and manually install it.
 
 Once downloaded, double-click on the downloaded file (.VSIX) and follow the prompts to install it into Visual Studio.
-
-### Install from within Visual Studio
-- Visual Studio 2019 and 2022: Select "Manage Extensions" on the "Extensions" menu. Search for "Editor Guidelines" in the Visual Studio Marketplace.
-- Visual Studio 2015 and 2017: Select "Extensions and Updates..." from the "Tools" menu. Search for "Editor Guidelines" in the Visual Studio Marketplace.
-
-You will then have to close and restart Visual Studio for the extension to be fully installed.
   
 ## Usage
 Control guidelines via the context (right-click) menu on the editor surface. You will see a *Guidelines* flyout with three commands:
@@ -52,8 +29,8 @@ You can change the guideline color from the Fonts and Colors page in `Tools|Opti
 
 ![GuidelinesToolsOptions](marketplace/images/FontsAndColors.png)
 
-## .editorconfig support (VS 2017 or above)
-For VS 2017, VS 2019 and VS 2022, the position of guidelines can be overridden via settings in .editorconfig files.
+## .editorconfig support
+For ~~VS 2017, VS 2019 and~~ VS 2022, the position of guidelines can be overridden via settings in .editorconfig files.
 Set the `guidelines` property to a list of column values. The following example sets guidelines at columns 80 and 120 for C# and VB files and a single guideline at column 80 for all other files.
 
 ```ini
