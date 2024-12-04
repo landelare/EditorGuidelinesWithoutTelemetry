@@ -1,6 +1,5 @@
 ﻿// Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information.
 
-using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
 using System.Collections.Generic;
@@ -46,71 +45,6 @@ namespace EditorGuidelines
 
         public void OnImportsSatisfied()
         {
-            TrackSettings(global::EditorGuidelines.Telemetry.CreateInitializeTelemetryItem(nameof(ColumnGuideAdornmentFactory) + " initialized"));
-
-            GuidelineBrush.BrushChanged += (sender, newBrush) =>
-            {
-                Telemetry.Client.TrackEvent("GuidelineColorChanged", new Dictionary<string, string> { ["Color"] = newBrush.ToString(InvariantCulture) });
-            };
-
-            if (TextEditorGuidesSettings is INotifyPropertyChanged settingsChanged)
-            {
-                settingsChanged.PropertyChanged += OnSettingsChanged;
-            }
-        }
-
-        private void OnSettingsChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(ITextEditorGuidesSettings.GuideLinePositionsInChars))
-            {
-                TrackSettings("SettingsChanged");
-            }
-        }
-
-        private void TrackSettings(string eventName) => TrackSettings(new EventTelemetry(eventName));
-
-        private void TrackSettings(EventTelemetry telemetry)
-        {
-            AddBrushColorAndGuidelinePositionsToTelemetry(telemetry, GuidelineBrush.Brush, TextEditorGuidesSettings.GuideLinePositionsInChars);
-            Telemetry.Client.TrackEvent(telemetry);
-        }
-
-        internal static void AddBrushColorAndGuidelinePositionsToTelemetry(EventTelemetry eventTelemetry, Brush brush, IEnumerable<int> positions)
-        {
-            var telemetryProperties = eventTelemetry.Properties;
-
-            if (brush != null)
-            {
-                telemetryProperties.Add("Color", brush.ToString(InvariantCulture) ?? "unknown");
-
-                if (brush.Opacity != 1.0)
-                {
-                    eventTelemetry.Metrics.Add("Opacity", brush.Opacity);
-                }
-            }
-
-            var count = 0;
-            foreach (var column in positions)
-            {
-                telemetryProperties.Add("guide" + count.ToString(InvariantCulture), column.ToString(InvariantCulture));
-                count++;
-            }
-
-            eventTelemetry.Metrics.Add("Count", count);
-        }
-
-        internal static void AddGuidelinesToTelemetry(EventTelemetry eventTelemetry, IEnumerable<Guideline> guidelines)
-        {
-            var telemetryProperties = eventTelemetry.Properties;
-
-            var count = 0;
-            foreach (var guideline in guidelines)
-            {
-                telemetryProperties.Add("guide" + count.ToString(InvariantCulture), guideline.ToString());
-                count++;
-            }
-
-            eventTelemetry.Metrics.Add("Count", count);
         }
 
         [Import]

@@ -1,4 +1,4 @@
-# Editor Guidelines
+# Editor Guidelines 🌺
 A Visual Studio extension that adds vertical column guides to the text editor.
 
 [![Build Status](https://github.com/pharring/EditorGuidelines/actions/workflows/CI.yml/badge.svg)](https://github.com/pharring/EditorGuidelines/actions/workflows/CI.yml)
@@ -94,4 +94,4 @@ To learn more about .editorconfig see https://aka.ms/editorconfigdocs
 
 **Note:** When guidelines are set via .editorconfig they override any other guidelines set via the context menus or command window.
 
-_Note: This extension collects and transmits anonymized usage statistics to the extension author for product improvement purposes._
+_Note: This extension respects you, and collects no telemetry whatsoever._

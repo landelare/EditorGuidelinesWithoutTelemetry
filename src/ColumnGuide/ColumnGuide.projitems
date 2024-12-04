@@ -29,7 +29,6 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)StrokeParameters.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Telemetry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TextEditorGuidesSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TextEditorGuidesSettingsRendezvous.cs" />
   </ItemGroup>

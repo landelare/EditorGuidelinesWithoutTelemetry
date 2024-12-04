@@ -1,6 +1,5 @@
 ﻿// Copyright (c) Paul Harrington.  All Rights Reserved.  Licensed under the MIT License.  See LICENSE in the project root for license information.
 
-using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.VisualStudio.Text.Editor;
 using System;
 using System.Collections.Generic;
@@ -20,11 +19,6 @@ namespace EditorGuidelines
     /// </summary>
     internal class ColumnGuideAdornment : IDisposable
     {
-        /// <summary>
-        /// Limits the number of telemetry events for .editorconfig settings.
-        /// </summary>
-        private static bool s_sentEditorConfigTelemetry;
-
         /// <summary>
         /// Collection of WPF lines that are drawn into our adornment.
         /// </summary>
@@ -330,29 +324,6 @@ namespace EditorGuidelines
 #pragma warning disable VSTHRD001 // Avoid legacy thread switching APIs
                 _ = _view.VisualElement.Dispatcher.BeginInvoke(new Action<IEnumerable<Guideline>>(GuidelinesChanged), guidelines);
 #pragma warning restore VSTHRD001 // Avoid legacy thread switching APIs
-            }
-
-            if (_isUsingCodingConvention && !s_sentEditorConfigTelemetry)
-            {
-                var eventTelemetry = new EventTelemetry("EditorConfig");
-                if (!string.IsNullOrEmpty(guidelinesConventionValue))
-                {
-                    eventTelemetry.Properties.Add("Convention", guidelinesConventionValue);
-                }
-
-                if (!string.IsNullOrEmpty(max_line_length))
-                {
-                    eventTelemetry.Properties.Add(nameof(max_line_length), max_line_length);
-                }
-
-                if (!string.IsNullOrEmpty(guidelines_style))
-                {
-                    eventTelemetry.Properties.Add(nameof(guidelines_style), guidelines_style);
-                }
-
-                ColumnGuideAdornmentFactory.AddGuidelinesToTelemetry(eventTelemetry, guidelines);
-                Telemetry.Client.TrackEvent(eventTelemetry);
-                s_sentEditorConfigTelemetry = true;
             }
         }
 
